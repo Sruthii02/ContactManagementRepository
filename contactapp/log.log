@@ -1,0 +1,270 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.example:contactapp >-----------------------
+[INFO] Building contactapp 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ contactapp ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ contactapp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ contactapp ---
+[INFO] skip non existing resourceDirectory C:\eSupport\eDriver\ContactSpringbootApp\contactapp\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ contactapp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ contactapp ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.contactapp.controller.ContactControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2025-02-07T12:17:05.815+05:30  INFO 22012 --- [contactapp] [           main] c.e.c.controller.ContactControllerTest   : Starting ContactControllerTest using Java 21.0.6 with PID 22012 (started by sruth in C:\eSupport\eDriver\ContactSpringbootApp\contactapp)
+2025-02-07T12:17:05.819+05:30  INFO 22012 --- [contactapp] [           main] c.e.c.controller.ContactControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-02-07T12:17:07.110+05:30  INFO 22012 --- [contactapp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-07T12:17:07.234+05:30  INFO 22012 --- [contactapp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 2 JPA repository interfaces.
+2025-02-07T12:17:10.407+05:30  INFO 22012 --- [contactapp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-02-07T12:17:10.445+05:30  INFO 22012 --- [contactapp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-07T12:17:10.446+05:30  INFO 22012 --- [contactapp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-07T12:17:10.652+05:30  INFO 22012 --- [contactapp] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-07T12:17:10.654+05:30  INFO 22012 --- [contactapp] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4811 ms
+2025-02-07T12:17:11.054+05:30  INFO 22012 --- [contactapp] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-07T12:17:11.213+05:30  INFO 22012 --- [contactapp] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-07T12:17:11.336+05:30  INFO 22012 --- [contactapp] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-07T12:17:11.611+05:30  INFO 22012 --- [contactapp] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-07T12:17:11.700+05:30  INFO 22012 --- [contactapp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-07T12:17:12.140+05:30  INFO 22012 --- [contactapp] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-02-07T12:17:12.145+05:30  INFO 22012 --- [contactapp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-07T12:17:12.199+05:30  WARN 22012 --- [contactapp] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-07T12:17:12.243+05:30  INFO 22012 --- [contactapp] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-07T12:17:14.086+05:30  INFO 22012 --- [contactapp] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table chat_messages (id bigint generated by default as identity, content varchar(255), sender varchar(255), timestamp timestamp(6), primary key (id))
+Hibernate: create table contacts (id bigint generated by default as identity, email varchar(255) not null, name varchar(255) not null, phone varchar(255) not null, primary key (id))
+Hibernate: alter table if exists contacts drop constraint if exists UK728mksvqr0n907kujew6p3jc0
+Hibernate: alter table if exists contacts add constraint UK728mksvqr0n907kujew6p3jc0 unique (email)
+2025-02-07T12:17:14.273+05:30  INFO 22012 --- [contactapp] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-07T12:17:15.632+05:30  WARN 22012 --- [contactapp] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-07T12:17:16.576+05:30  INFO 22012 --- [contactapp] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-02-07T12:17:16.822+05:30  INFO 22012 --- [contactapp] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-07T12:17:16.824+05:30  INFO 22012 --- [contactapp] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-07T12:17:16.829+05:30  INFO 22012 --- [contactapp] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+2025-02-07T12:17:17.614+05:30  INFO 22012 --- [contactapp] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-02-07T12:17:17.617+05:30  INFO 22012 --- [contactapp] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@45bde54d]]
+2025-02-07T12:17:17.620+05:30  INFO 22012 --- [contactapp] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-02-07T12:17:17.671+05:30  INFO 22012 --- [contactapp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 61591 (http) with context path '/'
+2025-02-07T12:17:17.709+05:30  INFO 22012 --- [contactapp] [           main] c.e.c.controller.ContactControllerTest   : Started ContactControllerTest in 12.526 seconds (process running for 14.299)
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /contacts/1
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.contactapp.controller.ContactController
+           Method = com.example.contactapp.controller.ContactController#deleteContact(Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2025-02-07T12:17:18.752+05:30  WARN 22012 --- [contactapp] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /contacts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"74"]
+             Body = {"id":1,"name":"John Doe","email":"john@example.com","phone":"1234567890"}
+    Session Attrs = {}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.HttpRequestMethodNotSupportedException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 405
+    Error message = Method 'POST' is not supported.
+          Headers = [Allow:"GET"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 14.52 s <<< FAILURE! -- in com.example.contactapp.controller.ContactControllerTest
+[ERROR] com.example.contactapp.controller.ContactControllerTest.testDeleteContact -- Time elapsed: 0.083 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<204> but was:<200>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.contactapp.controller.ContactControllerTest.testDeleteContact(ContactControllerTest.java:89)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.example.contactapp.controller.ContactControllerTest.testCreateContact -- Time elapsed: 0.074 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<405>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.contactapp.controller.ContactControllerTest.testCreateContact(ContactControllerTest.java:67)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.example.contactapp.websocket.ChatControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2025-02-07T12:17:19.268+05:30  INFO 22012 --- [contactapp] [           main] c.e.c.websocket.ChatControllerTest       : Starting ChatControllerTest using Java 21.0.6 with PID 22012 (started by sruth in C:\eSupport\eDriver\ContactSpringbootApp\contactapp)
+2025-02-07T12:17:19.269+05:30  INFO 22012 --- [contactapp] [           main] c.e.c.websocket.ChatControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-02-07T12:17:20.121+05:30  INFO 22012 --- [contactapp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-07T12:17:20.189+05:30  INFO 22012 --- [contactapp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
+2025-02-07T12:17:20.503+05:30  INFO 22012 --- [contactapp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-02-07T12:17:20.506+05:30  INFO 22012 --- [contactapp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-07T12:17:20.507+05:30  INFO 22012 --- [contactapp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-07T12:17:20.641+05:30  INFO 22012 --- [contactapp] [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-02-07T12:17:20.641+05:30  INFO 22012 --- [contactapp] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1366 ms
+2025-02-07T12:17:20.804+05:30  INFO 22012 --- [contactapp] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-07T12:17:20.817+05:30  INFO 22012 --- [contactapp] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-07T12:17:20.861+05:30  INFO 22012 --- [contactapp] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-07T12:17:20.865+05:30  INFO 22012 --- [contactapp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-02-07T12:17:20.868+05:30  INFO 22012 --- [contactapp] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2025-02-07T12:17:20.869+05:30  INFO 22012 --- [contactapp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-02-07T12:17:20.871+05:30  WARN 22012 --- [contactapp] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-07T12:17:20.873+05:30  INFO 22012 --- [contactapp] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-07T12:17:21.112+05:30  INFO 22012 --- [contactapp] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-07T12:17:21.127+05:30  INFO 22012 --- [contactapp] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-07T12:17:21.404+05:30  WARN 22012 --- [contactapp] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-07T12:17:21.631+05:30  INFO 22012 --- [contactapp] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-02-07T12:17:21.696+05:30  INFO 22012 --- [contactapp] [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring TestDispatcherServlet ''
+2025-02-07T12:17:21.697+05:30  INFO 22012 --- [contactapp] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-07T12:17:21.699+05:30  INFO 22012 --- [contactapp] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-02-07T12:17:21.745+05:30  INFO 22012 --- [contactapp] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-02-07T12:17:21.746+05:30  INFO 22012 --- [contactapp] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1eaf95d2]]
+2025-02-07T12:17:21.747+05:30  INFO 22012 --- [contactapp] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-02-07T12:17:21.759+05:30  INFO 22012 --- [contactapp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 61592 (http) with context path '/'
+2025-02-07T12:17:21.771+05:30  INFO 22012 --- [contactapp] [           main] c.e.c.websocket.ChatControllerTest       : Started ChatControllerTest in 2.711 seconds (process running for 18.361)
+2025-02-07T12:17:22.147+05:30  INFO 22012 --- [contactapp] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-07T12:17:22.147+05:30  INFO 22012 --- [contactapp] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-07T12:17:22.150+05:30  INFO 22012 --- [contactapp] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.184 s <<< FAILURE! -- in com.example.contactapp.websocket.ChatControllerTest
+[ERROR] com.example.contactapp.websocket.ChatControllerTest.testChatMessageSendAndReceive -- Time elapsed: 0.410 s <<< ERROR!
+java.util.concurrent.ExecutionException: jakarta.websocket.DeploymentException: The HTTP response from the server [400] did not permit the HTTP upgrade to WebSocket
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at com.example.contactapp.websocket.ChatControllerTest.testChatMessageSendAndReceive(ChatControllerTest.java:46)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: jakarta.websocket.DeploymentException: The HTTP response from the server [400] did not permit the HTTP upgrade to WebSocket
+	at org.apache.tomcat.websocket.WsWebSocketContainer.connectToServerRecursive(WsWebSocketContainer.java:384)
+	at org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:179)
+	at org.springframework.web.socket.client.standard.StandardWebSocketClient.lambda$executeInternal$0(StandardWebSocketClient.java:175)
+	at org.springframework.util.concurrent.FutureUtils.lambda$toSupplier$0(FutureUtils.java:74)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ContactControllerTest.testCreateContact:67 Status expected:<201> but was:<405>
+[ERROR]   ContactControllerTest.testDeleteContact:89 Status expected:<204> but was:<200>
+[ERROR] Errors: 
+[ERROR]   ChatControllerTest.testChatMessageSendAndReceive:46 » Execution jakarta.websocket.DeploymentException: The HTTP response from the server [400] did not permit the HTTP upgrade to WebSocket
+[INFO] 
+[ERROR] Tests run: 6, Failures: 2, Errors: 1, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22.659 s
+[INFO] Finished at: 2025-02-07T12:17:23+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.2:test (default-test) on project contactapp: There are test failures.
+[ERROR] 
+[ERROR] See C:\eSupport\eDriver\ContactSpringbootApp\contactapp\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

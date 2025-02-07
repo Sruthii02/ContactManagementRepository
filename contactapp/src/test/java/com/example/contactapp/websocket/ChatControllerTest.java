@@ -42,13 +42,10 @@ class ChatControllerTest {
 
     @Test
     void testChatMessageSendAndReceive() throws Exception {
-        // Set up the WebSocket client
 
         WebSocketClient webSocketClient = new SockJsClient(
-                Collections.singletonList(new WebSocketTransport(new StandardWebSocketClient()))
-        );
+                Collections.singletonList(new WebSocketTransport(new StandardWebSocketClient())));
 
-        
         WebSocketStompClient stompClient = new WebSocketStompClient(webSocketClient);
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
@@ -58,34 +55,29 @@ class ChatControllerTest {
         converter.setObjectMapper(objectMapper);
         stompClient.setMessageConverter(converter);
 
-        // Establish WebSocket session
         StompSession stompSession = stompClient.connectAsync(
                 "ws://localhost:" + port + "/chat-websocket",
                 new WebSocketHttpHeaders(),
                 new StompSessionHandlerAdapter() {
                 }).get(10, TimeUnit.SECONDS);
 
-        // Subscribe to the topic
         stompSession.subscribe("/topic/messages", new StompFrameHandler() {
             @Override
             public Type getPayloadType(StompHeaders headers) {
-                return ChatMessage.class; // The type of message expected
+                return ChatMessage.class;
             }
 
             @Override
             public void handleFrame(StompHeaders headers, Object payload) {
-                messages.offer((ChatMessage) payload); // Add received message to queue
+                messages.offer((ChatMessage) payload);
             }
         });
 
-        // Send a test message (ensure the ChatMessage constructor matches your model)
-        ChatMessage chatMessage = new ChatMessage("John", "Hello!"); // Constructor should match your model
+        ChatMessage chatMessage = new ChatMessage("John", "Hello!");
         stompSession.send("/app/sendMessage", chatMessage);
 
-        // Wait for the message to be received
         ChatMessage receivedMessage = messages.poll(2, TimeUnit.SECONDS);
 
-        // Assertions
         assertThat(receivedMessage).isNotNull();
         assertThat(receivedMessage.getSender()).isEqualTo("John");
         assertThat(receivedMessage.getContent()).isEqualTo("Hello!");

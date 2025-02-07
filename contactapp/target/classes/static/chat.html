@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Real-Time Chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+</head>
+<body>
+    <h2>Chat Room</h2>
+    <input type="text" id="username" placeholder="Enter your name"/>
+    <br><br>
+    <input type="text" id="message" placeholder="Type a message"/>
+    <button onclick="sendMessage()">Send</button>
+    <ul id="chatMessages"></ul>
+
+    <script>
+        var stompClient = null;
+
+        function connect() {
+            var socket = new SockJS('/chat-websocket');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+                stompClient.subscribe('/topic/messages', function (message) {
+                    var chatMessage = JSON.parse(message.body);
+                    var messageElement = document.createElement('li');
+                    messageElement.appendChild(document.createTextNode(chatMessage.sender + ": " + chatMessage.content));
+                    document.getElementById('chatMessages').appendChild(messageElement);
+                });
+            });
+        }
+
+        function sendMessage() {
+            var sender = document.getElementById("username").value;
+            var content = document.getElementById("message").value;
+            stompClient.send("/app/sendMessage", {}, JSON.stringify({'sender': sender, 'content': content}));
+            document.getElementById("message").value = '';
+        }
+
+        connect();
+    </script>
+</body>
+</html>

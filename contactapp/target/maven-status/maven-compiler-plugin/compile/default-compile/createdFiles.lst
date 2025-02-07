@@ -1,0 +1,14 @@
+com\example\contactapp\service\ContactService.class
+com\example\contactapp\service\ChatService.class
+com\example\contactapp\model\Contact.class
+com\example\contactapp\config\SecurityConfig.class
+com\example\contactapp\controller\ChatController.class
+com\example\contactapp\ContactappApplication.class
+com\example\contactapp\dto\ContactDTO.class
+com\example\contactapp\repository\ContactRepository.class
+com\example\contactapp\model\ChatMessage.class
+com\example\contactapp\repository\ChatMessageRepository.class
+com\example\contactapp\controller\ChatHistoryController.class
+com\example\contactapp\controller\ContactController.class
+com\example\contactapp\websocket\ChatHandler.class
+com\example\contactapp\config\WebSocketConfig.class

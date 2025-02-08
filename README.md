@@ -47,11 +47,11 @@ Follow these steps to set up and run the project locally:
 
 Clone the repository:
 
-git clone https://github.com/your-username/contact-management-chat-system.git
+git clone https://github.com/Sruthii02/ContactManagementRepository.git
 
 Navigate to the project directory:
 
-cd contact-management-chat-system
+cd ContactManagementRepository
 
 Build the project:
 
